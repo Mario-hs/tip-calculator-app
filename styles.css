@@ -1,0 +1,34 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root, button, input {
+    font-family: 'Space Mono', monospace;
+    --primary-strong-cyan: hsl(172, 67%, 45%);
+    --neutral-very-dark-cyan: hsl(183, 100%, 15%);
+    --neutral-dark-grayish-cyan: hsl(186, 14%, 43%);
+    --neutral-dark-grayish: hsl(184, 14%, 56%);
+    --neutral-light-grayish-cyan: hsl(185, 41%, 84%);
+    --neutral-light-grayish: hsl(189, 41%, 97%);
+    --neutral-white: hsl(0, 0%, 100%);
+}
+
+
+header {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--neutral-light-grayish-cyan);
+    color: var(--neutral-very-dark-cyan);
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
