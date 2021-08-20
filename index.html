@@ -25,46 +25,53 @@
 
   <main>
     <p>Conta</p>
-    <input type="text" name="conta" id="conta">
+    <div class="big">
+      <img src="./projeto/images/icon-dollar.svg" alt="">
+      <input class="big-input" type="text" name="conta" id="conta">
+    </div>
 
-    <section>
-      <p>Selecione Dica %</p>
-      <input type="button" value="5%">
-      <input type="button" value="10%">
-      <input type="button" value="15%">
-      <input type="button" value="25%">
-      <input type="button" value="50%">
-      <input type="text" name="custom" value="Custom">
+    <section class="tip-section">
+      <p>Selecione Gorjeta %</p>
+      <div>
+        <input type="button" value="5%">
+        <input type="button" value="10%">
+        <input type="button" value="15%">
+        <input type="button" value="25%">
+        <input type="button" value="50%">
+        <input type="text" name="custom" placeholder="Custom">
+      </div>
     </section>
 
-
     <p>Numero de Pessoas</p>
-    <input type="text" name="conta" id="numberPeople">
+    <div class="big">
+      <img src="./projeto/images/icon-person.svg" alt="">
+      <input class="big-input" type="text" name="conta" id="numberPeople">
+    </div>
 
     <section class="modal">
       <div>
-        <p>Valor da Gorjeta</p>
-        <span>/ pessoa</span>
-        <button>40</button>
+        <p>Gorjeta
+          </br><span>/ pessoa</span>
+        </p>
+        <button class="button">$4.27</button>
       </div>
 
       <div>
-        <p>Total</p>
-        <span>/ pessoa</span>
-        <button>40</button>
+        <p>Total
+          </br><span>/ pessoa</span>
+        </p>
+        <button class="button">$32.79</button>
       </div>
 
-      <button type="submit">Reset</button>
+      <button class="big-button" type=" submit">Reset</button>
     </section>
   </main>
-
-
-
 
   <footer>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      <br>
+      Coded by <a href="#">Mario Henrique</a>.
     </div>
   </footer>
 </body>

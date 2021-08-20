@@ -16,19 +16,160 @@
 }
 
 
+body {
+    background-color: var(--neutral-light-grayish-cyan);
+}
+
+
 header {
-    height: 150px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--neutral-light-grayish-cyan);
     color: var(--neutral-very-dark-cyan);
 }
 
 header h1 {
     text-transform: uppercase;
     font-weight: 400;
+    letter-spacing: .8rem;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+main {
+    background-color: var(--neutral-white);
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding: 30px 35px;
+    /* display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 70vh; */
+}
+
+main p {
+    color: var(--neutral-dark-grayish-cyan);
+    padding: 5px 0;
+}
+
+.big {
+    background-color: var(--neutral-light-grayish);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 7px 20px;
+    border-radius: 0.25rem;
+    margin-top: 10px;
+}
+
+main .big-input {
+    background-color: var(--neutral-light-grayish);
+    
+    border: none;
+    width: 90%;
+    text-align: end;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--neutral-very-dark-cyan);
+}
+
+main .big-input:focus {
+    outline: 0;
+}
+
+.tip-section {
+    margin: 30px auto;
+}
+
+.tip-section > div {
+    display: grid;
+    grid-column: auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    margin-top: 10px;
+}
+
+.tip-section input {
+    padding: 5px 20px;
+
+    font-weight: 700;
+    font-size: 24px;
+
+    background-color: var(--neutral-very-dark-cyan);
+    color: var(--neutral-white);
+
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.tip-section input[type=text] {
+    min-width: -webkit-fill-available;
+    text-align: end;
+    color: var(--neutral-dark-grayish-cyan);
+    background-color: var(--neutral-light-grayish);
+}
+
+.tip-section input[type=text]:focus {
+    outline: 0;
+}
+
+::-webkit-input-placeholder {
+    color: var(--neutral-dark-grayish-cyan);
+}
+
+.modal {
+    margin-top: 30px;
+    background-color: var(--neutral-very-dark-cyan);
+    border-radius: 0.8rem;
+    padding: 30px 25px 20px;
+}
+
+.modal div {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal p{
+    color: var(--neutral-white);
+}
+
+.modal span {
+    color: var(--neutral-dark-grayish-cyan);
+    font-size: 14px;
+}
+
+.button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-strong-cyan);
+}
+
+
+.big-button {
+    width: 100%;
+    background-color: var(--primary-strong-cyan);
+
+    border: none;
+    border-radius: 0.25rem;
+
+    text-transform: uppercase;
+    color: var(--neutral-very-dark-cyan);
+    
+    font-weight: 700;
+    font-size: 20px;
+
+    padding: 10px;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    background-color: var(--neutral-white);
+}
+.attribution a { 
+    text-decoration: none;
+    color: hsl(228, 45%, 44%); 
+}
