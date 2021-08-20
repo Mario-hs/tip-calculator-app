@@ -117,24 +117,24 @@ main .big-input:focus {
     color: var(--neutral-dark-grayish-cyan);
 }
 
-.modal {
+.modal-right {
     margin-top: 30px;
     background-color: var(--neutral-very-dark-cyan);
     border-radius: 0.8rem;
     padding: 30px 25px 20px;
 }
 
-.modal div {
+.modal-right div {
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
 }
 
-.modal p{
+.modal-right p{
     color: var(--neutral-white);
 }
 
-.modal span {
+.modal-right span {
     color: var(--neutral-dark-grayish-cyan);
     font-size: 14px;
 }
@@ -168,8 +168,79 @@ main .big-input:focus {
     font-size: 11px; 
     text-align: center; 
     background-color: var(--neutral-white);
+    padding: 30px;
 }
+
 .attribution a { 
     text-decoration: none;
     color: hsl(228, 45%, 44%); 
+}
+
+
+@media (max-width: 968.4px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        width: 80%;
+        margin: auto;
+        border-radius: 1.5rem;
+    }
+
+    .attribution { 
+        background: none;
+    }
+}
+
+@media (min-width: 968.5px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        width: 920px;
+        margin: auto;
+        display: flex;
+        padding: 30px;
+        border-radius: 1.5rem;
+    }
+
+    .modal-left {
+        width: 350px;
+        margin-right: 50px;
+        margin-left: 20px;
+    }
+    
+    .modal-right {
+        flex: 1;
+        margin-top: 0;
+        padding: 50px 40px 35px;
+    }
+
+    .modal-right div {
+        margin-bottom: 45px;
+    }
+
+    .tip-section > div {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tip-section input {
+        font-size: 18px;
+    }
+
+    .button {
+        font-size: 36px;
+    }
+
+    .big-button {
+        margin-top: 35px;
+    }
+
+    .attribution { 
+        background: none;
+    }
 }
