@@ -39,10 +39,6 @@ main {
     background-color: var(--neutral-white);
     border-radius: 1.5rem 1.5rem 0 0;
     padding: 30px 35px;
-    /* display: flex;
-    flex-direction: column;
-    flex: 1;
-    height: 70vh; */
 }
 
 main p {
@@ -62,6 +58,7 @@ main p {
 }
 
 main .big-input {
+    cursor: pointer;
     background-color: var(--neutral-light-grayish);
     
     border: none;
@@ -90,6 +87,7 @@ main .big-input:focus {
 }
 
 .tip-section input {
+    cursor: pointer;
     padding: 5px 20px;
 
     font-weight: 700;
@@ -103,6 +101,7 @@ main .big-input:focus {
 }
 
 .tip-section input[type=text] {
+    cursor: pointer;
     min-width: -webkit-fill-available;
     text-align: end;
     color: var(--neutral-dark-grayish-cyan);
@@ -149,6 +148,7 @@ main .big-input:focus {
 
 
 .big-button {
+    cursor: pointer;
     width: 100%;
     background-color: var(--primary-strong-cyan);
 
