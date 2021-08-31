@@ -14,9 +14,7 @@ const Bill = {
     }
 }
 
-handleInput();
-
-function handleInput() {
+handleInput = () => {
     Bill.bill = document.querySelector('#conta');
     Bill.bill.addEventListener('change', () => {
         return Bill.bill;
@@ -39,7 +37,7 @@ function handleInput() {
     handleSum();
 }
 
-function handleSum() {
+const handleSum = () => {
 
     const { bill, tip, custom, byPeople } = Bill.getValues();
     let tipPeople = document.getElementById('tipPeople');
