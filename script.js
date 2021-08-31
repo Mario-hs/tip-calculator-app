@@ -1,40 +1,64 @@
-handleInput();
+const Bill = {
+    bill: Number,
+    tip: Number,
+    custom: Number,
+    byPeople: Number,
 
-function handleInput(props) {
-    const tip = props;
-
-    const bill = Number(document.getElementById('conta').value);
-    const custom = Number(document.getElementById('custom').value);
-    const people = Number(document.getElementById('numberPeople').value);
-
-    handleSum(tip, bill, custom, people);
-
+    getValues() {
+        return {
+            bill: Number(Bill.bill.value),
+            tip: Number(Bill.tip.value),
+            custom: Number(Bill.custom.value),
+            byPeople: Number(Bill.byPeople.value)
+        }
+    }
 }
 
+handleInput();
 
-function handleSum(tip, bill, custom, people) {
+function handleInput() {
+    Bill.bill = document.querySelector('#conta');
+    Bill.bill.addEventListener('change', () => {
+        return Bill.bill;
+    })
+
+    Bill.tip = document.querySelector('.buttonTip');
+    Bill.tip.addEventListener('click', () => {
+        return Bill.tip;
+    })
+
+    Bill.custom = document.querySelector('#custom');
+    Bill.custom.addEventListener('change', () => {
+        return Bill.custom;
+    })
+
+    Bill.byPeople = document.querySelector('#people');
+    Bill.byPeople.addEventListener('change', () => {
+        return Bill.byPeople;
+    })
+    handleSum();
+}
+
+function handleSum() {
+
+    const { bill, tip, custom, byPeople } = Bill.getValues();
     let tipPeople = document.getElementById('tipPeople');
     let totalPerson = document.getElementById('totalPerson');
 
 
-    let sumTip = (bill * (tip / 100)) / people;
-    let sumTotal = (bill + (bill * (tip / 100))) / people;
+    // let sumTip = (bill * (tip / 100)) / byPeople;
+    // let sumTotal = (bill + (bill * (tip / 100))) / byPeople;
+    let sumTotalsumTip
+    let sumTotal
 
-    console.log('Tip', tip);
-    if (tip === undefined) {
-        sumTip = (bill * (custom / 100)) / people;
-        sumTotal = (bill + (bill * (custom / 100))) / people;
-        console.log('Custom', custom);
-    }
-
-    console.log('conta', bill);
-    console.log('pessoas', people);
-    console.log("------------------------");
-    console.log(typeof (sumTip));
-    console.log(typeof (sumTotal));
+    // console.log('Tip', tip);
+    // if (tip === undefined) {
+    sumTip = ((bill * (custom / 100)) / byPeople).toFixed(2);
+    sumTotal = ((bill + (bill * (custom / 100))) / byPeople).toFixed(2);
+    // }
 
 
-    if ((sumTip >= 0) && (sumTotal >= 0)) {
+    if ((sumTotal > 0) && (sumTotal != Infinity)) {
         tipPeople.innerHTML = `R$${sumTip}`;
         totalPerson.innerHTML = `R$${sumTotal}`;
     } else {

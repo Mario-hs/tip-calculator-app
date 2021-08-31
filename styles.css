@@ -86,7 +86,7 @@ main .big-input:focus {
     margin-top: 10px;
 }
 
-.tip-section input {
+.tip-section .buttonTip, input {
     cursor: pointer;
     padding: 5px 20px;
 
@@ -98,6 +98,11 @@ main .big-input:focus {
 
     border: none;
     border-radius: 0.25rem;
+}
+
+.tip-section .buttonTip:hover {
+    color: var(--neutral-very-dark-cyan);
+    background-color: var(--primary-strong-cyan);
 }
 
 .tip-section input[type=text] {

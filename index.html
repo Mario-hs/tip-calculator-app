@@ -28,25 +28,30 @@
       <p>Conta</p>
       <div class="big">
         <img src="./projeto/images/icon-dollar.svg" alt="">
-        <input class="big-input" type="text" name="conta" id="conta" onblur="handleInput()">
+        <input class="big-input" type="text" name="conta" id="conta" onchange="handleInput()">
       </div>
 
       <section class="tip-section">
         <p>Selecione % de Gorjeta</p>
         <div>
-          <input type="button" onclick="handleInput(5)" value="5%">
-          <input type="button" onclick="handleInput(10)" value="10%">
-          <input type="button" onclick="handleInput(15)" value="15%">
-          <input type="button" onclick="handleInput(25)" value="25%">
-          <input type="button" onclick="handleInput(50)" value="50%">
-          <input type="text" name="custom" onblur="handleInput()" id="custom" placeholder="Custom">
+          <!-- <input type="button" onclick="handleTip(5)" value="5%">
+          <input type="button" onclick="handleTip(10)" value="10%">
+          <input type="button" onclick="handleTip(15)" value="15%">
+          <input type="button" onclick="handleTip(25)" value="25%">
+          <input type="button" onclick="handleTip(50)" value="50%"> -->
+          <button type="button" class="buttonTip" value="5">5%</button>
+          <button type="button" class="buttonTip" value="10">10%</button>
+          <button type="button" class="buttonTip" value="15">15%</button>
+          <button type="button" class="buttonTip" value="25">25%</button>
+          <button type="button" class="buttonTip" value="50">50%</button>
+          <input type="text" name="custom" id="custom" onchange="handleInput()" placeholder="Custom">
         </div>
       </section>
 
       <p>Numero de Pessoas</p>
       <div class="big">
         <img src="./projeto/images/icon-person.svg" alt="">
-        <input class="big-input" type="text" name="conta" onblur="handleInput()" id="numberPeople">
+        <input class="big-input" type="text" name="conta" id="people" onchange="handleInput()">
       </div>
     </section>
 
