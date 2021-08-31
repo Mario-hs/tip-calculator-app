@@ -28,25 +28,25 @@
       <p>Conta</p>
       <div class="big">
         <img src="./projeto/images/icon-dollar.svg" alt="">
-        <input class="big-input" type="text" name="conta" id="conta">
+        <input class="big-input" type="text" name="conta" id="conta" onblur="handleInput()">
       </div>
 
       <section class="tip-section">
         <p>Selecione % de Gorjeta</p>
         <div>
-          <input type="button" value="5%">
-          <input type="button" value="10%">
-          <input type="button" value="15%">
-          <input type="button" value="25%">
-          <input type="button" value="50%">
-          <input type="text" name="custom" placeholder="Custom">
+          <input type="button" onclick="handleInput(5)" value="5%">
+          <input type="button" onclick="handleInput(10)" value="10%">
+          <input type="button" onclick="handleInput(15)" value="15%">
+          <input type="button" onclick="handleInput(25)" value="25%">
+          <input type="button" onclick="handleInput(50)" value="50%">
+          <input type="text" name="custom" onblur="handleInput()" id="custom" placeholder="Custom">
         </div>
       </section>
 
       <p>Numero de Pessoas</p>
       <div class="big">
         <img src="./projeto/images/icon-person.svg" alt="">
-        <input class="big-input" type="text" name="conta" id="numberPeople">
+        <input class="big-input" type="text" name="conta" onblur="handleInput()" id="numberPeople">
       </div>
     </section>
 
@@ -55,14 +55,14 @@
         <p>Gorjeta
           </br><span>/ pessoa</span>
         </p>
-        <button class="button">$4.27</button>
+        <p class="button" id="tipPeople">$</p>
       </div>
 
       <div>
         <p>Total
           </br><span>/ pessoa</span>
         </p>
-        <button class="button">$32.79</button>
+        <p class="button" id="totalPerson">$</p>
       </div>
 
       <button class="big-button" type=" submit">Reset</button>
@@ -77,5 +77,7 @@
     </div>
   </footer>
 </body>
+
+<script src="script.js"></script>
 
 </html>
