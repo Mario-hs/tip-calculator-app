@@ -1,31 +1,34 @@
 const Bill = {
-    bill: Number,
-    tip: Number,
-    custom: Number,
-    byPeople: Number,
+    bill: 0,
+    tip: 0,
+    custom: 0,
+    byPeople: 0,
 
     getValues() {
         return {
-            bill: Number(Bill.bill.value),
+            bill: Number.parseFloat(Bill.bill.value.replace(",", ".")),
             tip: Number(Bill.tip),
             custom: Number(Bill.custom.value),
             byPeople: Number(Bill.byPeople.value)
         }
     }
 }
-var aux
+
+var aux;
+
 handleTipButton = (e, position) => {
     let buttons = document.querySelectorAll('.buttonTip');
     Bill.tip = e;
-    if (Bill.custom.value != 0) {
-        buttons.item(aux).classList.remove('active');
-        buttons.item(position).classList.add('active');
-    }
-    aux = position;
 
-    if ((e === 0) && (position === null)) {
+    buttons.item(aux).classList.remove('active');
+    buttons.item(position).classList.add('active');
+
+    if ((Bill.custom != undefined) && (Bill.custom != 0)) {
+        console.log('oi')
         buttons.item(aux).classList.remove('active');
     }
+
+    aux = position;
 
     handleSum();
 }
@@ -33,12 +36,13 @@ handleTipButton = (e, position) => {
 handleInput = () => {
     Bill.bill = document.querySelector('#conta');
     Bill.bill.addEventListener('change', () => {
+        console.log(Bill.bill.value)
         return Bill.bill;
     })
 
     Bill.custom = document.querySelector('#custom');
     Bill.custom.addEventListener('change', () => {
-        handleTipButton(0, null)
+        handleTipButton(null, null);
         return Bill.custom;
     })
 
@@ -46,8 +50,8 @@ handleInput = () => {
     Bill.byPeople.addEventListener('change', () => {
         return Bill.byPeople;
     })
-    handleSum();
 
+    handleSum();
 }
 
 const handleSum = () => {
@@ -56,21 +60,23 @@ const handleSum = () => {
     let tipPeople = document.getElementById('tipPeople');
     let totalPerson = document.getElementById('totalPerson');
 
-
     let sumTip = ((bill * (tip / 100)) / byPeople).toFixed(2);
     let sumTotal = ((bill + (bill * (tip / 100))) / byPeople).toFixed(2);
 
-    if ((tip === undefined) || (custom >= 0)) {
+    if ((tip === undefined) || (custom > 0)) {
         sumTip = ((bill * (custom / 100)) / byPeople).toFixed(2);
         sumTotal = ((bill + (bill * (custom / 100))) / byPeople).toFixed(2);
     }
 
-
     if ((sumTotal > 0) && (sumTotal != Infinity)) {
-        tipPeople.innerHTML = `R$${sumTip}`;
-        totalPerson.innerHTML = `R$${sumTotal}`;
+        tipPeople.innerHTML = `$${sumTip}`;
+        totalPerson.innerHTML = `$${sumTotal}`;
     } else {
-        tipPeople.innerHTML = `R$0`;
-        totalPerson.innerHTML = `R$0`;
+        tipPeople.innerHTML = `$0`;
+        totalPerson.innerHTML = `$0`;
     }
+}
+
+function handleReset() {
+    window.location.reload();
 }
