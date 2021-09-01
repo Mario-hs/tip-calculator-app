@@ -72,8 +72,8 @@ const handleSum = () => {
         tipPeople.innerHTML = `$${sumTip}`;
         totalPerson.innerHTML = `$${sumTotal}`;
     } else {
-        tipPeople.innerHTML = `$0`;
-        totalPerson.innerHTML = `$0`;
+        tipPeople.innerHTML = `$0.00`;
+        totalPerson.innerHTML = `$0.00`;
     }
 }
 
