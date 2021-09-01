@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./projeto/images/favicon-32x32.png">
 
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -34,16 +34,11 @@
       <section class="tip-section">
         <p>Selecione % de Gorjeta</p>
         <div>
-          <!-- <input type="button" onclick="handleTip(5)" value="5%">
-          <input type="button" onclick="handleTip(10)" value="10%">
-          <input type="button" onclick="handleTip(15)" value="15%">
-          <input type="button" onclick="handleTip(25)" value="25%">
-          <input type="button" onclick="handleTip(50)" value="50%"> -->
-          <button type="button" class="buttonTip" value="5">5%</button>
-          <button type="button" class="buttonTip" value="10">10%</button>
-          <button type="button" class="buttonTip" value="15">15%</button>
-          <button type="button" class="buttonTip" value="25">25%</button>
-          <button type="button" class="buttonTip" value="50">50%</button>
+          <button type="button" class="buttonTip" onclick="handleTipButton(5, 0)">5%</button>
+          <button type="button" class="buttonTip" onclick="handleTipButton(10, 1)">10%</button>
+          <button type="button" class="buttonTip" onclick="handleTipButton(15, 2)">15%</button>
+          <button type="button" class="buttonTip" onclick="handleTipButton(25, 3)">25%</button>
+          <button type="button" class="buttonTip" onclick="handleTipButton(50, 4)">50%</button>
           <input type="text" name="custom" id="custom" onchange="handleInput()" placeholder="Custom">
         </div>
       </section>

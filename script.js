@@ -7,11 +7,27 @@ const Bill = {
     getValues() {
         return {
             bill: Number(Bill.bill.value),
-            tip: Number(Bill.tip.value),
+            tip: Number(Bill.tip),
             custom: Number(Bill.custom.value),
             byPeople: Number(Bill.byPeople.value)
         }
     }
+}
+var aux
+handleTipButton = (e, position) => {
+    let buttons = document.querySelectorAll('.buttonTip');
+    Bill.tip = e;
+    if (Bill.custom.value != 0) {
+        buttons.item(aux).classList.remove('active');
+        buttons.item(position).classList.add('active');
+    }
+    aux = position;
+
+    if ((e === 0) && (position === null)) {
+        buttons.item(aux).classList.remove('active');
+    }
+
+    handleSum();
 }
 
 handleInput = () => {
@@ -20,13 +36,9 @@ handleInput = () => {
         return Bill.bill;
     })
 
-    Bill.tip = document.querySelector('.buttonTip');
-    Bill.tip.addEventListener('click', () => {
-        return Bill.tip;
-    })
-
     Bill.custom = document.querySelector('#custom');
     Bill.custom.addEventListener('change', () => {
+        handleTipButton(0, null)
         return Bill.custom;
     })
 
@@ -35,6 +47,7 @@ handleInput = () => {
         return Bill.byPeople;
     })
     handleSum();
+
 }
 
 const handleSum = () => {
@@ -44,16 +57,13 @@ const handleSum = () => {
     let totalPerson = document.getElementById('totalPerson');
 
 
-    // let sumTip = (bill * (tip / 100)) / byPeople;
-    // let sumTotal = (bill + (bill * (tip / 100))) / byPeople;
-    let sumTotalsumTip
-    let sumTotal
+    let sumTip = ((bill * (tip / 100)) / byPeople).toFixed(2);
+    let sumTotal = ((bill + (bill * (tip / 100))) / byPeople).toFixed(2);
 
-    // console.log('Tip', tip);
-    // if (tip === undefined) {
-    sumTip = ((bill * (custom / 100)) / byPeople).toFixed(2);
-    sumTotal = ((bill + (bill * (custom / 100))) / byPeople).toFixed(2);
-    // }
+    if ((tip === undefined) || (custom >= 0)) {
+        sumTip = ((bill * (custom / 100)) / byPeople).toFixed(2);
+        sumTotal = ((bill + (bill * (custom / 100))) / byPeople).toFixed(2);
+    }
 
 
     if ((sumTotal > 0) && (sumTotal != Infinity)) {
@@ -63,5 +73,4 @@ const handleSum = () => {
         tipPeople.innerHTML = `R$0`;
         totalPerson.innerHTML = `R$0`;
     }
-
 }

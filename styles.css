@@ -100,6 +100,11 @@ main .big-input:focus {
     border-radius: 0.25rem;
 }
 
+.active {
+    color: var(--neutral-very-dark-cyan)!important;
+    background-color: var(--primary-strong-cyan)!important;
+}
+
 .tip-section .buttonTip:hover {
     color: var(--neutral-very-dark-cyan);
     background-color: var(--primary-strong-cyan);
