@@ -186,6 +186,11 @@ main .big-input:focus {
     color: hsl(228, 45%, 44%); 
 }
 
+.disable {
+    opacity: 0.2;
+    cursor: no-drop;
+}
+
 
 @media (min-width: 600px){
     body{

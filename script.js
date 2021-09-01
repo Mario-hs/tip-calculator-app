@@ -17,6 +17,9 @@ const Bill = {
 var aux;
 
 handleTipButton = (e, position) => {
+    document.querySelector('#reset').classList.remove("disable");
+    document.querySelector('#reset').disabled = false;
+
     let buttons = document.querySelectorAll('.buttonTip');
     Bill.tip = e;
 
@@ -34,6 +37,9 @@ handleTipButton = (e, position) => {
 }
 
 handleInput = () => {
+    document.querySelector('#reset').classList.remove("disable");
+    document.querySelector('#reset').disabled = false;
+
     Bill.bill = document.querySelector('#conta');
     Bill.bill.addEventListener('change', () => {
         console.log(Bill.bill.value)
